@@ -1,0 +1,9 @@
+;; -*- emacs-lisp -*-
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["scpc" nil
+   #("telnet" 0 6
+     (fontified nil))
+   nil]
+  nil))

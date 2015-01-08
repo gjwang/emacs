@@ -1,0 +1,16 @@
+/home/gjwang/android-mips-froyo/system/core/libpixelflinger/tinyutils/smartpointer.h
+/home/gjwang/android-mips-froyo/system/core/libpixelflinger/tinyutils/#smartpointer.h#
+/home/gjwang/android-mips-froyo/frameworks/base/libs/utils/RefBase.cpp
+/home/gjwang/android-mips-froyo/frameworks/base/libs/utils/#RefBase.cpp#
+/home/gjwang/android-mips-froyo/frameworks/base/include/utils/RefBase.h
+/home/gjwang/android-mips-froyo/frameworks/base/include/utils/#RefBase.h#
+/home/gjwang/android-mips-froyo/frameworks/base/media/libmediaplayerservice/StagefrightRecorder.cpp
+/home/gjwang/android-mips-froyo/frameworks/base/media/libmediaplayerservice/#StagefrightRecorder.cpp#
+/home/gjwang/android-mips-froyo/external/opencore/android/author/android_audio_input.h
+/home/gjwang/android-mips-froyo/external/opencore/android/author/#android_audio_input.h#
+/home/gjwang/android-mips-froyo/frameworks/base/include/media/stagefright/MetaData.h
+/home/gjwang/android-mips-froyo/frameworks/base/include/media/stagefright/#MetaData.h#
+/home/gjwang/android-mips-froyo/frameworks/base/include/media/stagefright/MediaSource.h
+/home/gjwang/android-mips-froyo/frameworks/base/include/media/stagefright/#MediaSource.h#
+/home/gjwang/android-mips-froyo/frameworks/base/media/jni/android_media_MediaRecorder.cpp
+/home/gjwang/android-mips-froyo/frameworks/base/media/jni/#android_media_MediaRecorder.cpp#
