@@ -1,0 +1,13 @@
+[user]
+	name = gjwang
+	email = guijiewang@pingshow.net
+[diff]
+	external = /home/gjwang/git_meld.sh
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 700x550+0+24
+	history-view-vpane-position = 753
+	file-view-vpane-position = 799
+	main-window-view = FileView
+[github]
+	user = gjwang
