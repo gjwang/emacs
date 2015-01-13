@@ -1,3 +1,6 @@
+From:
+http://stackoverflow.com/questions/5314036/how-to-use-addr2line-in-android
+
 Way 1:
 
 Let's say that logcat show you the following crash log (this is from one of my projects):
