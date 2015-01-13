@@ -1,0 +1,49 @@
+Way 1:
+
+Let's say that logcat show you the following crash log (this is from one of my projects):
+
+I/DEBUG   (   31): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   31): Build fingerprint: 'generic/sdk/generic:2.3/GRH55/79397:eng/test-keys'
+I/DEBUG   (   31): pid: 378, tid: 386  >>> com.example.gltest <<<
+I/DEBUG   (   31): signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 00000000
+I/DEBUG   (   31):  r0 001dbdc0  r1 00000001  r2 00000000  r3 00000000
+I/DEBUG   (   31):  r4 00000000  r5 40a40000  r6 4051a480  r7 42ddbee8
+I/DEBUG   (   31):  r8 43661b24  r9 42ddbed0  10 42ddbebc  fp 41e462d8
+I/DEBUG   (   31):  ip 00000001  sp 436619d0  lr 83a12f5d  pc 8383deb4  cpsr 20000010
+I/DEBUG   (   31):          #00  pc 0003deb4  /data/data/com.example.gltest/lib/libnativemaprender.so
+I/DEBUG   (   31):          #01  pc 00039b76  /data/data/com.example.gltest/lib/libnativemaprender.so
+I/DEBUG   (   31):          #02  pc 00017d34  /system/lib/libdvm.so
+Look at the last 3 lines; this is your callstack. 'pc' is the program counter, and the pc for stack frame #00 gives you the address where the crash occurred. This is the number to pass to addr2line.
+
+I'm using NDK r5, so the executable I'm using is located at $NDK/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin; make sure that is in your $PATH. The command to use looks like
+
+arm-linux-androideabi-addr2line -C -f -e obj/local/armeabi/libXXX.so <address>
+Or, for the case above:
+
+arm-linux-androideabi-addr2line -C -f -e obj/local/armeabi/libnativemaprender.so 0003deb4
+Which gives you the location of the crash.
+
+Note:
+
+The -C flag is to demangle C++ code
+Use the .so file under obj/local/armeabi, since this is the non-stripped version
+Also, when using NDK r5 with a 2.3 AVD, it is actually possible to debug multithreaded code.
+
+
+
+Way 2:
+There's an easier way to do this now (ndk-r7). Check out the ndk-stack command. The docs are in you_android_ndk_path/docs/NDK-STACK.html
+
+share|improve this answer
+answered Feb 7 '12 at 2:10
+
+Byron
+66459
+1	  	
+I tried the first answer by svdree and couldn't get any good output. I tried this one and it showed me the exact line my code was crashing on! Thanks Byron! –  alk3ovation Jun 22 '12 at 18:02
+  	  	
+Much easier than addr2line used to be! –  Josh Nov 29 '12 at 20:03
+  	  	
+I would very much like a link/resource, if you could put one up. –  Ehtesh Choudhury Apr 25 '13 at 20:06
+  	  	
+Here is one yssays.wordpress.com/2011/12/27/android-ndk-stack-tool –  Gerard Jan 9 '14 at 18:00
