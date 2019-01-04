@@ -1,3 +1,8 @@
+#git config --global alias.co checkout
+#git config --global alias.br branch
+#git config --global alias.ci commit
+#git config --global alias.st status
+
 function cvsst
 {
         cvs st $* 2>&1|grep "Status: "|grep -v "Up-to-date"
